@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search New Car - BMW</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background:#111; color:#fff; padding:40px;">
+    <h1>Available BMW Models (Search Results)</h1>
+    <p>Here are the cars matching your search:</p>
+    
+    <div style="display:flex; gap:20px; margin-top:30px;">
+        <% cars.forEach(car => { %>
+            <div style="background:#222; padding:20px; border:1px solid #441; width:250px;">
+                <h3><%= car.name %></h3>
+                <p>Type: <%= car.type %></p>
+                <p><b>Price: <%= car.price %></b></p>
+            </div>
+        <% }) %>
+    </div>
+    
+    <br><br>
+    <a href="/" class="btn-primary" style="text-decoration:none;">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Build Your BMW</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background:#111; color:#fff; padding:40px;">
+    <h1>Configure & Price Your BMW</h1>
+
+    <form action="/build-car" method="POST" style="max-width:400px; display:flex; flex-direction:column; gap:15px; margin-top:20px;">
+        <label>Select Base Model:</label>
+        <select name="model" style="padding:8px;">
+            <option value="X5">BMW X5 (Base)</option>
+            <option value="X7">BMW X7 (Luxury)</option>
+        </select>
+
+        <label>Paint Color:</label>
+        <select name="color" style="padding:8px;">
+            <option value="Alpine White">Alpine White</option>
+            <option value="Matte Black">Matte Black (+₹ 2,00,000)</option>
+        </select>
+
+        <button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Calculate Price</button>
+    </form>
+
+    <% if (result) { %>
+        <div style="background:#222; padding:20px; border:1px solid blue; margin-top:20px; max-width:400px;">
+            <h3 style="color:lightblue;">Your Configuration Summary:</h3>
+            <p>Model: <b><%= result.model %></b></p>
+            <p>Color: <b><%= result.color %></b></p>
+            <p>Estimated Total Price: <b style="color:gold;">₹ <%= result.total.toLocaleString() %></b></p>
+        </div>
+    <% } %>
+
+    <br><br>
+    <a href="/" class="btn-primary" style="text-decoration:none;">Back to Home</a>
+</body>
+</html>
